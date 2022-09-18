@@ -37,7 +37,7 @@ export class Game {
     }
 
     assureIfPending(): void {
-        const isFinished = this.calculateGameStatus() !== GameStatus.InProgess;
+        const isFinished = this.calculateGameStatus() !== GameStatus.InProgress;
 
         if (isFinished) {
             throw new BadRequestException("Game is finished.");
@@ -57,7 +57,7 @@ export class Game {
             case EntityGameStatus.Draw:
                 return GameStatus.Draw;
             case EntityGameStatus.InProgress:
-                return GameStatus.InProgess;
+                return GameStatus.InProgress;
             case EntityGameStatus.Finished:
                 return this.calculateWinStatus();
             default:
